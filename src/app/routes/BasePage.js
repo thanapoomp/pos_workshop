@@ -38,7 +38,6 @@ import ReduxDemo from "../modules/_demo/pages/ReduxDemo";
 import FormWithCustomDateBE from "../modules/_demo/pages/formComponents/FormWithCustomDateBE";
 import FormWithDateRangePicker from "../modules/_demo/pages/formComponents/FormWithDateRangePicker";
 
-
 export const breadcrumbNameMap = {
   "/product": "Product Manage",
   "/product/new": "New Product",
@@ -57,33 +56,21 @@ export default function BasePage(props) {
       <Switch>
         {/* <Redirect exact from="/" to="/home" /> */}
         <Route exact path="/errorUnAuthorized" component={ErrorUnAuthorized} />
-        <ContentRoute exact title="home" path="/" component={Home} />
-        <ContentRoute exact title="home" path="/home" component={Home} />
+        <ContentRoute exact path="/" component={Home} />
+        <ContentRoute exact path="/home" component={Home} />
         <ContentRoute exact path="/test" component={Test} title="Test" />
 
         {/* Begin Demo */}
 
+        <PrivateRoute exact path="/demo/alert" component={AlertDemo} />
+        <PrivateRoute exact path="/demo/formDemo" component={FormDemo} />
         <PrivateRoute
           exact
-          title="alert demo"
-          path="/demo/alert"
-          component={AlertDemo}
-        />
-        <PrivateRoute
-          exact
-          title="form demo"
-          path="/demo/formDemo"
-          component={FormDemo}
-        />
-        <PrivateRoute
-          exact
-          title="form demo"
           path="/demo/formWithCustomDateBE"
           component={FormWithCustomDateBE}
         />
         <PrivateRoute
           exact
-          title="form with autoComplete demo"
           path="/demo/formWithAutoComplete"
           component={FormWithAutoComplete}
         />
@@ -91,164 +78,125 @@ export default function BasePage(props) {
           exact
           path="/demo/formWithCheckBox"
           component={FormWithCheckBox}
-          title="FormWithCheckBox"
         />
         <PrivateRoute
           exact
           path="/demo/formWithCheckboxGroup"
           component={FormWithCheckboxGroup}
-          title="FormWithCheckboxGroup"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDatePicker"
           component={FormWithDatePicker}
-          title="FormWithDatePicker"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDateTimePicker"
           component={FormWithDateTimePicker}
-          title="FormWithDateTimePicker"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDateRangePicker"
           component={FormWithDateRangePicker}
-          title="FormWithDateRangePicker"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDropdown"
           component={FormWithDropdown}
-          title="FormWithDropdown"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDropdownMultiple"
           component={FormWithDropDownMultiple}
-          title="FormWithDropdownMultiple"
         />
         <PrivateRoute
           exact
           path="/demo/formWithDropdownCascade"
           component={FormWithDropdownCascade}
-          title="FormWithDropdownCascade"
         />
         <PrivateRoute
           exact
           path="/demo/formWithRadioGroup"
           component={FormWithRadioGroup}
-          title="FormWithRadioGroup"
         />
         <PrivateRoute
           exact
           path="/demo/formWithRating"
           component={FormWithRating}
-          title="FormWithRating"
         />
         <PrivateRoute
           exact
           path="/demo/formWithSlider"
           component={FormWithSlider}
-          title="FormWithSlider"
         />
         <PrivateRoute
           exact
           path="/demo/formWithSwitch"
           component={FormWithSwitch}
-          title="FormWithSwitch"
         />
         <PrivateRoute
           exact
           path="/demo/formWithTextMaskCardId"
           component={FormWithTextMaskCardId}
-          title="FormWithTextMaskCardId"
         />
         <PrivateRoute
           exact
           path="/demo/formWithTextField"
           component={FormWithTextField}
-          title="FormWithTextField"
         />
         <PrivateRoute
           exact
           path="/demo/formWithTextNumber"
           component={FormWithTextNumber}
-          title="FormWithTextNumber"
         />
         <PrivateRoute
           exact
           path="/demo/formWithTimePicker"
           component={FormWithTimePicker}
-          title="FormWithTimePicker"
         />
         <PrivateRoute
           exact
           path="/demo/formWithUploader"
           component={FormWithUploader}
-          title="FormWithUploader"
         />
-        <PrivateRoute
-          exact
-          path="/demo/reduxDemo"
-          component={ReduxDemo}
-          title="reduxDemo"
-        />
+        <PrivateRoute exact path="/demo/reduxDemo" component={ReduxDemo} />
         <PrivateRoute
           exact
           path="/demo/pdfGenerrate"
           component={pdfGenerrate}
-          title="pdfGenerrate"
         />
         <PrivateRoute
           exact
           path="/demo/QRGenerateDemo"
           component={QRGenerateDemo}
-          title="QRGenerateDemo"
         />
         <PrivateRoute
           exact
           path="/demo/QRReaderDemo"
           component={QRReaderDemo}
-          title="QRReaderDemo"
         />
         <PrivateRoute
           exact
           path="/demo/BarcodeGenerateDemo"
           component={BarcodeGenerateDemo}
-          title="BarcodeGenerateDemo"
         />
-        <PrivateRoute
-          exact
-          path="/demo/apexcharts"
-          component={ChartDemo}
-          title="ChartDemo"
-        />
+        <PrivateRoute exact path="/demo/apexcharts" component={ChartDemo} />
         <PrivateRoute
           exact
           path="/demo/chartDrillDown"
           component={ChartDrillDownDemo}
-          title="ChartDrillDownDemo"
         />
         <PrivateRoute
           exact
           path="/demo/PrintComponent"
           component={PrintComponent}
-          title="PrintComponent"
         />
         <PrivateRoute
           exact
           path="/demo/datatableList"
           component={DatatableListDemo}
-          title="DatatableListDemo"
         />
-        <PrivateRoute
-          exact
-          path="/demo/tabBasic"
-          component={TabBasic}
-          title="Tab Basic"
-        />
+        <PrivateRoute exact path="/demo/tabBasic" component={TabBasic} />
 
         <PrivateRoute
           exact
@@ -260,7 +208,6 @@ export default function BasePage(props) {
         {/* End Demo part สามารถ comment ได้ */}
 
         {/* Begin Demo POS */}
-
 
         {/* nothing match - redirect to error */}
         <Redirect to="/error404" />

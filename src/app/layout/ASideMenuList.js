@@ -57,7 +57,7 @@ export default function ASideMenuList() {
 
       <Divider style={{ marginBottom: 15 }} />
 
-      <MenuItem iconName="home" text="Home" path="/home"></MenuItem>
+      <MenuItem iconName="assistant_navigation" text="Home" path="/home"></MenuItem>
 
       <MenuItem iconName="quiz" text="Test" path="/test"></MenuItem>
      
@@ -103,11 +103,6 @@ export default function ASideMenuList() {
             path="/demo/QRReaderDemo"
           ></MenuItem>
         </ParentsMenu>
-        <MenuItem
-          iconName="star"
-          text="Time-Ago"
-          path="/demo/timeAgoPage"
-        ></MenuItem>
         {/* End QR - Barcode */}
 
         {/* Start Reporting */}
@@ -134,11 +129,6 @@ export default function ASideMenuList() {
           ></MenuItem>
         </ParentsMenu>
         {/* End Reporting */}
-        <MenuItem
-          iconName="calendar_month"
-          text="Calendar"
-          path="/demo/calendar"
-        ></MenuItem>
       </ParentsMenu>
       {/* End Demo */}
     </List>

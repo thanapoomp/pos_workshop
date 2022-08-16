@@ -41,7 +41,6 @@ export const APIGW_BASEURL = {
     PROD: `https://apigw.siamsmile.co.th`,
 };
 
-
 export const AUTH_BASEURL = { 
     LOCAL: `https://demoauthserver.devsiamsmile.com`,
     DEV: `https://demoauthserver.devsiamsmile.com`,
