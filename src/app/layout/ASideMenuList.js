@@ -57,10 +57,13 @@ export default function ASideMenuList() {
 
       <Divider style={{ marginBottom: 15 }} />
 
-      <MenuItem iconName="assistant_navigation" text="Home" path="/home"></MenuItem>
+      <MenuItem
+        iconName="assistant_navigation"
+        text="Home"
+        path="/home"
+      ></MenuItem>
 
       <MenuItem iconName="quiz" text="Test" path="/test"></MenuItem>
-     
 
       {/* Demo */}
       <ParentsMenu iconName="star" text="Demo">
@@ -131,6 +134,22 @@ export default function ASideMenuList() {
         {/* End Reporting */}
       </ParentsMenu>
       {/* End Demo */}
+
+      {/* Product */}
+      <MenuItem
+        iconName="css"
+        text="Manage Product"
+        path="/product"
+      ></MenuItem>
+
+      {/* Purchase */}
+      <MenuItem
+        iconName="css"
+        text="Purchase"
+        path="/purchase"
+      ></MenuItem>
+
+
     </List>
   );
 }

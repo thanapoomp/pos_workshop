@@ -1,4 +1,4 @@
-let APP_NAME = "Demo POS";
+let APP_NAME = "React Demo POS";
 
 if(process.env.REACT_APP_ENV && process.env.REACT_APP_ENV !== "PROD"){
     APP_NAME += "[" + process.env.REACT_APP_ENV + "]"
@@ -7,7 +7,7 @@ if(process.env.REACT_APP_ENV && process.env.REACT_APP_ENV !== "PROD"){
 export const APP_INFO = {
   name: APP_NAME,
   version: "1.0.0",
-  since: "2021",
+  since: "2022",
   description: "",
   contactUrl: "https://www.siamsmile.co.th",
 };

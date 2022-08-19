@@ -4,7 +4,6 @@ import { ContentRoute } from "./ContentRoute";
 import PrivateRoute from "./PrivateRoute";
 import ErrorUnAuthorized from "../pages/ErrorUnAuthorized";
 import Home from "../pages/Home";
-import Test from "../pages/Test";
 import { PERMISSIONS } from "../../Constant";
 import AlertDemo from "../modules/_demo/pages/AlertDemo";
 import FormDemo from "../modules/_demo/pages/formComponents/FormDemo";
@@ -37,16 +36,13 @@ import TabBasic from "../modules/_demo/pages/TabBasic";
 import ReduxDemo from "../modules/_demo/pages/ReduxDemo";
 import FormWithCustomDateBE from "../modules/_demo/pages/formComponents/FormWithCustomDateBE";
 import FormWithDateRangePicker from "../modules/_demo/pages/formComponents/FormWithDateRangePicker";
+import ProductManage from "../modules/Product/pages/ProductManage";
+import ProductById from "../modules/Product/pages/ProductById";
+import ProductAddEdit from "../modules/Product/pages/ProductAddEdit";
+import Purchase from "../modules/Cart/pages/Purchase";
 
 export const breadcrumbNameMap = {
   "/product": "Product Manage",
-  "/product/new": "New Product",
-  "/product/:id/edit": "Product edit",
-  "/product/:id": "Product view",
-  "/checkout": "Check out",
-  "/productgroup": "Product Group manage",
-  "/productgroup/:id/edit": "Product Group edit",
-  "/productgroup/:id": "Product Group",
   "/purchase": "Purchase",
 };
 
@@ -58,7 +54,6 @@ export default function BasePage(props) {
         <Route exact path="/errorUnAuthorized" component={ErrorUnAuthorized} />
         <ContentRoute exact path="/" component={Home} />
         <ContentRoute exact path="/home" component={Home} />
-        <ContentRoute exact path="/test" component={Test} title="Test" />
 
         {/* Begin Demo */}
 
@@ -198,16 +193,16 @@ export default function BasePage(props) {
         />
         <PrivateRoute exact path="/demo/tabBasic" component={TabBasic} />
 
-        <PrivateRoute
-          exact
-          path="/permissionTest"
-          permissions={[PERMISSIONS.employee_delete]}
-          component={Test}
-        />
-
         {/* End Demo part สามารถ comment ได้ */}
 
         {/* Begin Demo POS */}
+        <PrivateRoute exact path="/product" component={ProductManage} />
+        <PrivateRoute exact path="/product/new" component={ProductAddEdit} />
+        <PrivateRoute exact path="/product/:id" component={ProductById} />
+        <PrivateRoute exact path="/product/:id/edit" component={ProductAddEdit} />
+
+        <PrivateRoute exact path="/purchase" component={Purchase} />
+        
 
         {/* nothing match - redirect to error */}
         <Redirect to="/error404" />

@@ -13,29 +13,34 @@ import Layout from "../layout/Layout";
 import SSOHandler from "../modules/_auth/components/SSOHandler";
 import SigninCallback from "../modules/_auth/pages/SigninCallback";
 import SilentCallback from "../modules/_auth/pages/SilentCallback";
+import Test from "../pages/Test";
 
 export function Routes() {
   return (
-      <Switch>
-        <ContentRoute
-          exact
-          title="redirect"
-          path="/signin-callback"
-          component={SigninCallback}
-        />
-        <ContentRoute
-          exact
-          title="redirect"
-          path="/silent-callback"
-          component={SilentCallback}
-        />
-        <Route path="/error404" component={Error404} />
-        <SSOHandler>
-          <Layout>
-            <BasePage />
-          </Layout>
-        </SSOHandler>
-        <Redirect to="/error404"></Redirect>
-      </Switch>
+    <Switch>
+      <ContentRoute
+        exact
+        title="redirect"
+        path="/signin-callback"
+        component={SigninCallback}
+      />
+      <ContentRoute
+        exact
+        title="redirect"
+        path="/silent-callback"
+        component={SilentCallback}
+      />
+
+      <ContentRoute exact title="redirect" path="/test" component={Test} />
+
+      <Route path="/error404" component={Error404} />
+
+      <SSOHandler>
+        <Layout>
+          <BasePage />
+        </Layout>
+      </SSOHandler>
+      <Redirect to="/error404"></Redirect>
+    </Switch>
   );
 }
